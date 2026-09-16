@@ -1,0 +1,43 @@
+section {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1%;
+}
+
+.sec-lef {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.sec-lef h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-family: "";
+}
+
+.sec-lef img {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.sec-lef p {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.sec-rig {
+    flex: 1;
+}
+
+@media screen and (max-width:769px) {
+    section {
+        width: 100%;
+    }
+
+    .sec-lef {
+        width: 100%;
+    }
+}

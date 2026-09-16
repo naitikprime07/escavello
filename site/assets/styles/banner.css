@@ -1,0 +1,61 @@
+.banner {
+    width: 1200px;
+    display: flex;
+    margin: 20px auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ban-box {
+    width: calc((100% - 20px) / 2);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ban-box img {
+    transition: all 0.5s ease;
+    height: 100%;
+}
+
+.ban-box:hover img {
+    transform: scale(1.1);
+}
+
+.ban-txt {
+    width: 80%;
+    border-radius: 15px;
+    background-color: #fff;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    min-height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 2% 4%;
+    transition: 0.4s ease all;
+}
+
+.ban-txt:hover {
+    color: #FE00BF;
+}
+
+@media screen and (max-width:769px) {
+    .banner {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ban-box {
+        width: 100%;
+    }
+
+    .ban-txt {
+        font-size: 16px;
+    }
+}

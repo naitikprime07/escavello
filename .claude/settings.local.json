@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(do sed -i 's|©2025 escapello\\.com All Rights Reserved|©2025 escavello.com All Rights Reserved|g' \"$file\")",
+      "Bash(do sed -i 's|escapello\\.com_tecentech_interstitial|escavello.com_tecentech_interstitial|g' \"$file\")",
+      "Bash(npm test)",
+      "Bash(npm run build)",
+      "Read(//d/New-Web/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
