@@ -1,4 +1,4 @@
-import { readdirSync } from 'node:fs';
+import { readdirSync, copyFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
@@ -19,4 +19,21 @@ export default defineConfig({
   appType: 'mpa',
   server: { host: '0.0.0.0' },
   build: { rollupOptions: { input: htmlEntries(root) } },
+  publicDir: false, // We'll manually handle static files
+  plugins: [
+    {
+      name: 'copy-static-files',
+      writeBundle() {
+        const distDir = resolve(root, 'dist');
+
+        // Copy ads.txt to dist
+        const adsTxtSrc = resolve(root, 'ads.txt');
+        const adsTxtDest = resolve(distDir, 'ads.txt');
+
+        if (existsSync(adsTxtSrc)) {
+          copyFileSync(adsTxtSrc, adsTxtDest);
+        }
+      }
+    }
+  ]
 });
